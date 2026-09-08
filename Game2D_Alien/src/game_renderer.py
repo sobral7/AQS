@@ -1,5 +1,6 @@
 import pygame
 
+
 class GameRenderer:
     """Responsável apenas por desenhar os elementos do jogo na tela."""
     def __init__(self, screen, bg_color, ship, bullets, aliens) -> None:

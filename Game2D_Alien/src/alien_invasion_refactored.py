@@ -1,12 +1,13 @@
-import sys
 import pygame
 
-from settings import Settings
-from ship import Ship
 from bullet_manager import BulletManager
+from fast_alien import FastAlien
 from fleet_manager import FleetManager
 from game_events import GameEventHandler
 from game_renderer import GameRenderer
+from settings import Settings
+from ship import Ship
+
 
 class AlienInvasion:
     """Gerencia o jogo e seus comportamentos."""
@@ -28,7 +29,9 @@ class AlienInvasion:
         self.bg_color = self.settings.bg_color
 
         self.bullet_manager = BulletManager(self.screen, self.settings, self.ship)
-        self.fleet_manager = FleetManager(self.screen, self.settings, self.ship)
+        self.fleet_manager = FleetManager(
+            self.screen, self.settings, self.ship, FastAlien
+        )
         self.event_handler = GameEventHandler(self.ship, self.bullet_manager)
         self.renderer = GameRenderer(
             self.screen,

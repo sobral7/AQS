@@ -1,6 +1,7 @@
 import pygame
 from pygame.sprite import Sprite
 from pygame.surface import Surface
+
 from settings import Settings
 from ship import Ship
 
